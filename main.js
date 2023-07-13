@@ -1,5 +1,9 @@
 import './style.css'
 
+import space from './space.jpg'
+import donut from './donut.jpg'
+import star from './star.png'
+
 import * as THREE from 'three';
 // import orbit controls
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -25,11 +29,11 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(0);
 
 // Texture
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load(space);
 scene.background = spaceTexture;
 
 // Torus Geometry
-const torusTexture = new THREE.TextureLoader().load('donut.jpg');
+const torusTexture = new THREE.TextureLoader().load(donut);
 const torus = new THREE.Mesh(  
   new THREE.TorusGeometry( 10, 3, 16, 100 ), 
   new THREE.MeshStandardMaterial( { map: torusTexture } ) 
@@ -52,7 +56,7 @@ const controls = new OrbitControls(camera, renderer.domElement)
 
 // Stars
 function addStar() {
-  const starTexture = new THREE.TextureLoader().load('star.png');
+  const starTexture = new THREE.TextureLoader().load(star);
   const star = new THREE.Mesh( 
     new THREE.SphereGeometry(0.25, 24, 24), 
     new THREE.MeshStandardMaterial( {map: starTexture} ) 
