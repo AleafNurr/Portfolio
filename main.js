@@ -2,7 +2,7 @@ import './style.css'
 
 import * as THREE from 'three';
 // import orbit controls
-import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Scene
 const scene = new THREE.Scene();
