@@ -55,20 +55,20 @@ scene.add(lightHelper)
 const controls = new OrbitControls(camera, renderer.domElement)
 
 // // Stars
-function addStar() {
-  const starTexture = new THREE.TextureLoader().load(starpng);
-  const star = new THREE.Mesh( 
-    new THREE.SphereGeometry(0.25, 24, 24), 
-    new THREE.MeshStandardMaterial( {map: starTexture} ) 
-  );
+// function addStar() {
+//   const starTexture = new THREE.TextureLoader().load(starpng);
+//   const star = new THREE.Mesh( 
+//     new THREE.SphereGeometry(0.25, 24, 24), 
+//     new THREE.MeshStandardMaterial( {map: starTexture} ) 
+//   );
 
-  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+//   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
 
-  star.position.set(x, y, z);
-  scene.add(star);
-}
+//   star.position.set(x, y, z);
+//   scene.add(star);
+// }
 
-Array(200).fill().forEach(addStar);
+// Array(200).fill().forEach(addStar);
 
 // Scroll
 function moveCamera() {
