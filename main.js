@@ -2,7 +2,7 @@ import './style.css'
 
 import space from './space.jpg'
 import donut from './donut.jpg'
-import star from './star.png'
+import starpng from './star.png'
 
 import * as THREE from 'three';
 // import orbit controls
@@ -54,9 +54,9 @@ scene.add(lightHelper)
 // Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement)
 
-// Stars
+// // Stars
 function addStar() {
-  const starTexture = new THREE.TextureLoader().load(star);
+  const starTexture = new THREE.TextureLoader().load(starpng);
   const star = new THREE.Mesh( 
     new THREE.SphereGeometry(0.25, 24, 24), 
     new THREE.MeshStandardMaterial( {map: starTexture} ) 
