@@ -83,3 +83,9 @@ blockquote p {
   grid-column: 6 / 12;
   border-radius: 50px 0 50px 0;
 }
+
+/* color change for <a> tags */
+
+.a_color {
+  color: white;
+}
