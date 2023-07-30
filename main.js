@@ -2,6 +2,8 @@ import './style.css'
 
 import space from './space.jpg'
 import donut from './donut.jpg'
+import earth from './earth.png'
+import mars from './mars.jpg'
 import starpng from './star.png'
 
 import * as THREE from 'three';
@@ -40,16 +42,30 @@ const torus = new THREE.Mesh(
 );
 scene.add( torus );
 
+// Earth
+const earthTexture = new THREE.TextureLoader().load(earth);
+const earthSphere = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 64, 64),
+  new THREE.MeshStandardMaterial( { map: earthTexture } )
+);
+scene.add(earthSphere);
+
+// Mars
+const marsTexture = new THREE.TextureLoader().load(mars);
+const marsSphere = new THREE.Mesh(
+  new THREE.SphereGeometry(10, 64, 64),
+  new THREE.MeshStandardMaterial( { map: marsTexture } )
+);
+scene.add(marsSphere);
+marsSphere.position.setX(-20);
+marsSphere.position.setY(10);
+
 // Lighting
 const pointLight = new THREE.PointLight(0xffffff)
 pointLight.position.set(100,50,5)
 const ambientLight = new THREE.AmbientLight(0xffffff) // floodlight
 scene.add(pointLight, ambientLight)
 
-// Helpers
-const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50)
-scene.add(lightHelper)
 
 // Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement)
@@ -58,7 +74,7 @@ const controls = new OrbitControls(camera, renderer.domElement)
 // function addStar() {
 //   const starTexture = new THREE.TextureLoader().load(starpng);
 //   const star = new THREE.Mesh( 
-//     new THREE.SphereGeometry(0.25, 24, 24), 
+//     new THREE.SphereGeometry(0.1, 24, 24), 
 //     new THREE.MeshStandardMaterial( {map: starTexture} ) 
 //   );
 
@@ -73,17 +89,9 @@ const controls = new OrbitControls(camera, renderer.domElement)
 // Scroll
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top; // get the top of the document
-  // torus rotation
-  
-
-  // camera position
-  // if( camera.position.z <= 0 ) {
-    camera.position.z = t * -0.01;
-    camera.position.x = t * -0.0002;
-    camera.position.y = t * -0.0002;
-  // }
-  // log the position of the camera
-  // console.log(camera.position.x, camera.position.y, camera.position.z);
+  camera.position.z = t * -0.01;
+  camera.position.x = t * -0.0002;
+  camera.position.y = t * -0.0002;
 }
 
 document.body.onscroll = moveCamera;
@@ -95,6 +103,12 @@ function animate() {
   torus.rotation.x += 0.01;
   torus.rotation.y -= 0.01;
   torus.rotation.z += 0.05;
+
+  earthSphere.rotation.y -= 0.01;
+  earthSphere.rotation.z += 0.001;
+
+  marsSphere.rotation.y -= 0.01;
+  marsSphere.rotation.z += 0.005;
 
   controls.update();
 
