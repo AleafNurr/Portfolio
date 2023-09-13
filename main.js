@@ -81,22 +81,6 @@ scene.add(pointLight, ambientLight)
 // Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement)
 
-// // Stars
-// function addStar() {
-//   const starTexture = new THREE.TextureLoader().load(starpng);
-//   const star = new THREE.Mesh( 
-//     new THREE.SphereGeometry(0.1, 24, 24), 
-//     new THREE.MeshStandardMaterial( {map: starTexture} ) 
-//   );
-
-//   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-
-//   star.position.set(x, y, z);
-//   scene.add(star);
-// }
-
-// Array(200).fill().forEach(addStar);
-
 // Scroll
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top; // get the top of the document
@@ -123,7 +107,6 @@ function animate() {
 
   octahedron.rotation.x -= 0.01;
   octahedron.rotation.y += 0.01;
-  octahedron.rotation.z -= 0.05;
 
   controls.update();
 
