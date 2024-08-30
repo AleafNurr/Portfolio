@@ -1,11 +1,6 @@
-import './style.css'
-
 import space from './space.jpg'
 import donut from './donut.jpg'
 import earth from './earth.png'
-import mars from './mars.jpg'
-import metal3 from './space-station.jpg'
-import starpng from './star.png'
 
 import * as THREE from 'three';
 // import orbit controls
@@ -32,8 +27,8 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(0);
 
 // Texture
-const spaceTexture = new THREE.TextureLoader().load(space);
-scene.background = spaceTexture;
+// const spaceTexture = new THREE.TextureLoader().load(space);
+// scene.background = spaceTexture;
 
 // Torus Geometry
 const torusTexture = new THREE.TextureLoader().load(donut);
@@ -50,26 +45,6 @@ const earthSphere = new THREE.Mesh(
   new THREE.MeshStandardMaterial( { map: earthTexture } )
 );
 scene.add(earthSphere);
-
-// Mars
-const marsTexture = new THREE.TextureLoader().load(mars);
-const marsSphere = new THREE.Mesh(
-  new THREE.SphereGeometry(10, 64, 64),
-  new THREE.MeshStandardMaterial( { map: marsTexture } )
-);
-scene.add(marsSphere);
-marsSphere.position.setX(-20);
-marsSphere.position.setY(10);
-
-// Octahedron
-const octoTexture = new THREE.TextureLoader().load(metal3);
-const octahedron = new THREE.Mesh(
-  new THREE.OctahedronGeometry( 10 ),
-  new THREE.MeshStandardMaterial( { map: octoTexture, side: THREE.DoubleSide } )
-);
-scene.add(octahedron);
-octahedron.position.setY(-15);
-octahedron.position.setX(25);
 
 // Lighting
 const pointLight = new THREE.PointLight(0xffffff)
@@ -101,12 +76,6 @@ function animate() {
 
   earthSphere.rotation.y -= 0.01;
   earthSphere.rotation.z += 0.001;
-
-  marsSphere.rotation.y -= 0.01;
-  marsSphere.rotation.z += 0.005;
-
-  octahedron.rotation.x -= 0.01;
-  octahedron.rotation.y += 0.01;
 
   controls.update();
 
