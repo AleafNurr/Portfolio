@@ -3,132 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Alif's Portfolio Website</title>
   </head>
   <body>
-    <canvas id="bg"></canvas> <!-- Background Canvas -->
+    <!-- Background Canvas -->
+    <!-- <canvas id="bg"></canvas>  -->
 
     <main>
 
       <header>
-        <h1>Alif Nurrokhman</h1>
-        <p>🚀 Welcome! 🚀</p>
-        <a href="https://www.linkedin.com/in/alif-nurrokhman/" class="a_color">🌐 LinkedIn 🌐</a>
+        <h1>Kia Ora</h1>
+        <!-- <a href="https://www.linkedin.com/in/alif-nurrokhman/" class="a_color">🌐 LinkedIn 🌐</a>
         <br>
-        <a href="https://drive.google.com/file/d/1XwNo_qzePw8FK07Loy1Zggp3vc2ls7Ut/view?usp=drive_link" class="a_color">💼 CV 💼</a>
+        <a href="https://drive.google.com/file/d/1XwNo_qzePw8FK07Loy1Zggp3vc2ls7Ut/view?usp=drive_link" class="a_color">💼 Employers 💼</a>
         <br>
-        <a href="https://github.com/AleafNurr" class="a_color">🔗 GitHub 🔗 </a>
+        <a href="https://github.com/AleafNurr" class="a_color">🔗 GitHub 🔗 </a> -->
       </header>
 
-      <section>
-        <h2>Who Am I? 📜</h2>
+      <section class="hidden image">
+        <div  class="text-bg">
+          <h2>Seamless IT solutions, boosting local growth</h2>
+          <p>
+            We provide the right solutions and support to allow your business to grow in today's digital landscape
+          </p>
+        </div>
+      </section>
+      <section class="hidden card-darkGrey">
+        <div>
+          <h2>The Delivery Process</h2>
+          <p>
+            Save time and money with our services
+          </p>
+        </div>
+        <img src="/assets/images/processChartLarge.svg" alt="placeholder">
+      </section>
+      <section class="hidden card-basic">
+        <h2>Driving Success with Our Services</h2>
         <p>
-          I am a final-year graduate specializing in the field
-          of machine learning and artificial intelligence.
-          Throughout my academic journey, I have focused
-          on various aspects of data, allowing me to
-          acquire both technical expertise and theoretical
-          knowledge in the data field, as well as the
-          software and cloud domains.
+          Web Development
         </p>
-
         <p>
-          My academic
-          experience has demonstrated my adeptness in
-          meeting deadlines and successfully accomplishing
-          personal objectives. Currently, I am seeking an
-          opportunity to work in the field of data science as
-          a data analyst/engineer to further my personal
-          career goal of working as a ML/AI specialist.
+          Woo Commerice
         </p>
-
         <p>
-          Outside of study and work, I spend my free time
-          either exploring and producing music or at the
-          gym. I have a passion for the culinary arts and
-          enjoy cooking, especially for other people. My
-          background in theatre inspired my love of film. My
-          top three auteur directors are Christopher Nolan,
-          Quentin Tarantino, and Wes Anderson.
+          Web Design
+        </p>
+        <p>
+          IT Support
         </p>
       </section>
-      
-      <section class="left">
-        <h2>Projects 👩🏽‍🚀</h2>
-
-        <h3>
-          <a href="https://master.d2n1htgp8w3u10.amplifyapp.com" class="a_color">Cotiss Honest Feed Back App</a>  
-        </h3>
+      <section class="hidden card-blue">
+        <h2>Product Showcase</h2>
         <p>
-          This project was developed over the summer of 2023 as way to learn about AWS and help me prepare for the AWS cloud practitioner exam. 
-          This project made use of AWS DynamoDB service for back-end storage and is deployed using the AWS Amplify service. 
-          This project used the JavaScript framework React, as well as Tailwind CSS for the front-end. <br>
-          <a href="https://drive.google.com/file/d/1zfeTaZXQSVj2IwN0WQVVYcs_mkNkf811/view?usp=sharing" class="a_color">The documentation can be found here.</a> <br>
-          <a href='https://www.youtube.com/watch?v=EDY3zieHuag' class='a_color'>Video demonstration can be found here.</a>
-        </p>
-        <h3>
-          <a href="https://car-app.pages.dev" class="a_color">Self-Driving Car Simulation</a>
-        </h3>
-        <p>
-          A fun little project for me to learn native JavaScript as well as apply my knowledge of neural networks and genetic programs. 
-          This project was deployed using the Pages Cloudflare service and relied on the Vite framework for development. <br>
-          <a href='https://github.com/AleafNurr/Car-app' class='a_color'>GIT repo can be found here.</a>
-        </p>
-        <h3>
-          <a href="https://drive.google.com/file/d/1-Iuxl3e4Eb01nxCH0vIb1Nh64mT9nS7z/view?usp=sharing" class="a_color">Cafe Louis Queue Analysis</a>
-        </h3>
-        <p>
-          This was a group project that was done in collaboration with a local cafe shop around the Victoria University campus.
-          The key tasks of this project was to analyse the characteristcs of the cafes queuing system and to provide recommendations on how to improve the cafe's efficiency.
-          By analysing the queuing system, we were able to identify the peak hours of the cafe and the average time spent by customers in the cafe. 
-          This project made use of Python to simulate the queuing system and to analyse the data. R was used to write the report and presentation. <br>
-          <a href='https://github.com/AleafNurr/Louis-Cafe-Queue-Analysis' class='a_color'>GIT repo can be found here.</a>
-        </p>
-        <h3>Website</h3>
-        <p>
-          This website was developed using the Vite framework, the Three.js package, and is deployed using the Pages Cloudflare service. <br>
-          <a href='https://github.com/AleafNurr/Portfolio' class='a_color'>GIT repo can found here.</a>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ullam saepe praesentium illum sunt quis consequatur, quaerat ad ea dicta reprehenderit nihil, temporibus voluptatem similique soluta pariatur amet odio iste?
         </p>
       </section>
-
-      <section>
-        <h2>Education 📚</h2>
-
-        <h3>Victoria University of Wellington</h3>
-        <p>
-          Bachelor of Science in Computer Science and Data Science with AI/ML Specialisation <br>
-          2018 - 2021
-        </p>
-        <h3>AWS Certified Cloud Practitioner</h3>
-        <p>
-          Completed in Febuary 2023 <br>
-        </p>
+      <section class="footer">
+        <h3>Contact us for a free qoute</h3>
+        <p>Phone: 021 128 1377 </p>
+        <p>Email: alif.nurrokh@gmail.com</p>
       </section>
-
-      <blockquote>
-        <p>"Embrace the journey of self-discovery, for within your deepest struggles lie the seeds of your greatest strength and the power to create an extraordinary life." <br>- ChatGPT</p>
-      </blockquote>
-
-      <!-- <section class="left">
-        <h2>Work History 🌮</h2>
-
-        <h3>DOT Loves Data Intern</h3>
-        <p>
-          10/07/2023 - 30/10/2023
-        </p>
-        <h3>The Warehouse</h3>
-        <p>
-          Shopfloor Employee <br>
-          2018 - 2020
-        </p>
-        <h3>Blacksmith Bar</h3>
-        <p>
-          Cook <br>
-          2016 - 2018
-        </p>
-      </section> -->
-
     </main>
-    <script type="module" src="/main.js"></script>
+    <!-- <script type="module" src="/main.js"></script> -->
+    <script>
+      document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          /* gets bounding edges for rectangle */
+          const rect = section.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight;
+          section.classList.toggle('visible', isVisible);
+        });
+      })
+    </script>
   </body>
 </html>
