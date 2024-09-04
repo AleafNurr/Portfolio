@@ -24,43 +24,70 @@
         <a href="https://github.com/AleafNurr" class="a_color">🔗 GitHub 🔗 </a> -->
       </header>
 
-      <section class="hidden image">
-        <div  class="text-bg">
-          <h2>Seamless IT solutions, boosting local growth</h2>
-          <p>
-            We provide the right solutions and support to allow your business to grow in today's digital landscape
+      <section class="visible banner banner-image">
+        <div class="banner-text-bg">
+          <h2 class="h2-banner">Seamless IT solutions</h2>
+          <h3 class="h3-banner">Boosting local growth</h3>
+          <p class="p-banner">
+            Providing the right solutions and support to allow your business to grow in today's digital landscape
           </p>
         </div>
       </section>
-      <section class="hidden card-darkGrey">
+      <section class="card-DG">
         <div>
-          <h2>The Delivery Process</h2>
-          <p>
+          <h2 class="card-DG-header">The Delivery Process</h2>
+          <p class="card-DG-text">
             Save time and money with our services
           </p>
+          <picture>
+            <source srcset="/assets/images/charts/processChartSmall.svg" media="(min-width: 300px) and (max-width: 700px)">
+            <source srcset="/assets/images/charts/processChartLarge.svg" media="(min-width: 800px)">
+            <img src="/assets/images/charts/processChartLarge.svg" alt="PH" >  
+          </picture>
         </div>
-        <img src="/assets/images/processChartLarge.svg" alt="placeholder">
       </section>
-      <section class="hidden card-basic">
+      <section class="hidden">
         <h2>Driving Success with Our Services</h2>
-        <p>
-          Web Development
-        </p>
-        <p>
-          Woo Commerice
-        </p>
-        <p>
-          Web Design
-        </p>
-        <p>
-          IT Support
-        </p>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/multiple-defenses-svgrepo-com.svg" alt="PH" >
+          <h3>Web Development</h3>
+          <p>Our development can tailor towards needs for businesses of all kinds</p>
+        </div>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/mobile-app-svgrepo-com.svg" alt="PH" >
+          <h3>Woo Commerice</h3>
+          <p>Selling products online no longer becomes a challenge for entrepreneurs</p>
+        </div>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/interface-control-svgrepo-com.svg" alt="PH" >
+          <h3>Web Design</h3>
+          <p>Design your site with unlimited freedom, allowing to express your creative vision and business asthetics</p>
+        </div>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/cloud-acceleration-svgrepo-com.svg" alt="PH" >
+          <h3>Cloud Delivery</h3>
+          <p>Deploy to the cloud, gaining easy access for customers alike.</p>
+        </div>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/safe-and-stable-svgrepo-com.svg" alt="PH" >
+          <h3>Monitored Security</h3>
+          <p>Ensure that your site is protected</p>
+        </div>
+        <div class="hidden card-service">
+          <img class="icon" src="/assets/images/icons/system-settings-svgrepo-com.svg" alt="PH" >
+          <h3>IT Support</h3>
+          <p>We offer specialised IT assistance for your business needs</p>
+        </div>
       </section>
-      <section class="hidden card-blue">
+      <section class="hidden">
         <h2>Product Showcase</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et ullam saepe praesentium illum sunt quis consequatur, quaerat ad ea dicta reprehenderit nihil, temporibus voluptatem similique soluta pariatur amet odio iste?
-        </p>
+        <p>Platforms delivered for your business needs</p>
+        <div class="card-product" onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')">
+          <p>Windscreen Service Site</p>
+        </div>
+        <div class="card-product" onclick="window.open('https://app038.wordpress.com', '_blank', 'noopener')">
+          <p>Wordpress Shopify Site</p>
+        </div>
       </section>
       <section class="footer">
         <h3>Contact us for a free qoute</h3>
@@ -78,6 +105,23 @@
           const isVisible = rect.top < window.innerHeight;
           section.classList.toggle('visible', isVisible);
         });
+        const divCards = document.querySelectorAll('div.card-service');
+        divCards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight;
+          card.classList.toggle('visible', isVisible);
+        });
+      })
+      document.addEventListener('DOMContentLoaded', function() {
+        const cardProducts = document.querySelectorAll('.card-product');
+        cardProducts.forEach(card => {
+          card.addEventListener('mouseover', function() {
+            card.opacity = 0.75;
+          })
+          card.addEventListener('mouseout', function() {
+            card.opacity = 1;
+          })
+        })
       })
     </script>
   </body>
