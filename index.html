@@ -24,7 +24,7 @@
         <a href="https://github.com/AleafNurr" class="a_color">🔗 GitHub 🔗 </a> -->
       </header>
 
-      <section class="visible banner banner-image">
+      <section class="visible banner">
         <div class="banner-text-bg">
           <h2 class="h2-banner">Seamless IT solutions</h2>
           <h3 class="h3-banner">Boosting local growth</h3>
@@ -56,32 +56,56 @@
         <div class="hidden card-service">
           <img class="icon" src="/assets/images/icons/mobile-app-svgrepo-com.svg" alt="PH" >
           <h3>Woo Commerice</h3>
-          <p>Selling products online no longer becomes a challenge for entrepreneurs</p>
+          <p>Sell your products online your way</p>
         </div>
         <div class="hidden card-service">
           <img class="icon" src="/assets/images/icons/interface-control-svgrepo-com.svg" alt="PH" >
           <h3>Web Design</h3>
           <p>Design your site with unlimited freedom, allowing to express your creative vision and business asthetics</p>
         </div>
-        <div class="hidden card-service">
+        <div class="hidden card-service-no-TP">
+          <div class="card-deal">
+            <p>First Year Domain Free</p>
+          </div>
+          <div class="card-deal">
+            <p>First Month Hosting Free</p>
+          </div>
           <img class="icon" src="/assets/images/icons/cloud-acceleration-svgrepo-com.svg" alt="PH" >
           <h3>Cloud Delivery</h3>
-          <p>Deploy to the cloud, gaining easy access for customers alike.</p>
+          <p>Deploy to the internet with ease to reach your customers</p>
         </div>
-        <div class="hidden card-service">
+        <div class="hidden card-service-no-TP">
+          <div class="card-deal">
+            <p>Free</p>
+          </div>
           <img class="icon" src="/assets/images/icons/safe-and-stable-svgrepo-com.svg" alt="PH" >
           <h3>Monitored Security</h3>
-          <p>Ensure that your site is protected</p>
+          <p>Ensure that your site is protected and securely monitered</p>
         </div>
-        <div class="hidden card-service">
+        <div class="hidden card-service-no-TP">
+          <div class="card-deal">
+            <p>Free</p>
+          </div>
           <img class="icon" src="/assets/images/icons/system-settings-svgrepo-com.svg" alt="PH" >
           <h3>IT Support</h3>
           <p>We offer specialised IT assistance for your business needs</p>
         </div>
       </section>
-      <section class="hidden">
-        <h2>Product Showcase</h2>
+      <section class="hidden section-service-bg">
+        <h2>What We Offer</h2>
         <p>Platforms delivered for your business needs</p>
+        <div class="service-grid-container">
+          <p class="service-grid-item">Development</p>
+          <p class="service-grid-item">Woo Commerice</p>
+          <p class="service-grid-item">Design</p>
+          <p class="service-grid-item">Cloud Delivery</p>
+          <p class="service-grid-item">Security</p>
+          <p class="service-grid-item">IT Support</p>
+        </div>
+        <!-- <div>
+          <p>Hello</p>
+          <p>World</p>
+        </div> -->
         <div class="card-product" onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')">
           <p>Windscreen Service Site</p>
         </div>
@@ -98,31 +122,48 @@
     <!-- <script type="module" src="/main.js"></script> -->
     <script>
       document.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-          /* gets bounding edges for rectangle */
-          const rect = section.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight;
-          section.classList.toggle('visible', isVisible);
-        });
-        const divCards = document.querySelectorAll('div.card-service');
-        divCards.forEach(card => {
-          const rect = card.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight;
-          card.classList.toggle('visible', isVisible);
-        });
+        const toggleVisibility = (selector) => {
+          const elements = document.querySelectorAll(selector);
+          elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight;
+            element.classList.toggle('visible', isVisible);
+          });
+        };
+    
+        toggleVisibility('section');
+        toggleVisibility('.card-service');
+        toggleVisibility('.card-service-no-TP');
       })
+
       document.addEventListener('DOMContentLoaded', function() {
         const cardProducts = document.querySelectorAll('.card-product');
         cardProducts.forEach(card => {
           card.addEventListener('mouseover', function() {
             card.opacity = 0.75;
-          })
+          });
           card.addEventListener('mouseout', function() {
             card.opacity = 1;
-          })
-        })
-      })
+          });
+        });
+        let currentSelected = null;
+        const serviceItems = document.querySelectorAll('.service-grid-item');
+        serviceItems.forEach(item => {
+          item.addEventListener('click', function() {
+            /* check if any other element contains the selected class*/
+            if (currentSelected){
+              if(currentSelected != item){
+                currentSelected.classList.remove('selected');
+              };
+            };
+            /* toggle 'selected' */
+            item.classList.toggle('selected');
+            
+            /* updated current selected */
+            currentSelected = item.classList.contains('selected') ? item : null;
+          });
+        });
+      });
     </script>
   </body>
 </html>
