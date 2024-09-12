@@ -2,21 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Page content!" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Alif's Portfolio Website</title>
   </head>
   <body>
-    <!-- Background Canvas -->
-    <!-- <canvas id="bg"></canvas>  -->
-
-    <main>
+    <main id="content">
 
       <header>
         <h1>Kia Ora</h1>
+        <nav>
+          <a href="#footer" class="header-links">
+            <p>Contact Us</p>
+          </a>
+          <a href="/templates/employers.html" class="header-links">
+            <p>For Employers</p>
+          </a>
+        </nav>
         <!-- <a href="https://www.linkedin.com/in/alif-nurrokhman/" class="a_color">🌐 LinkedIn 🌐</a>
         <br>
         <a href="https://drive.google.com/file/d/1XwNo_qzePw8FK07Loy1Zggp3vc2ls7Ut/view?usp=drive_link" class="a_color">💼 Employers 💼</a>
@@ -40,26 +46,26 @@
             Save time and money with our services
           </p>
           <picture>
-            <source srcset="/assets/images/charts/processChartSmall.svg" media="(min-width: 300px) and (max-width: 700px)">
-            <source srcset="/assets/images/charts/processChartLarge.svg" media="(min-width: 800px)">
-            <img src="/assets/images/charts/processChartLarge.svg" alt="PH" >  
+            <source srcset="/assets/charts/processChartSmall.svg" media="(min-width: 300px) and (max-width: 700px)">
+            <source srcset="/assets/charts/processChartLarge.svg" media="(min-width: 800px)">
+            <img src="/assets/charts/processChartLarge.svg" alt="PH" >  
           </picture>
         </div>
       </section>
       <section class="hidden">
         <h2>Driving Success with Our Services</h2>
         <div class="hidden card-service">
-          <img class="icon" src="/assets/images/icons/multiple-defenses-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/multiple-defenses-svgrepo-com.svg" alt="PH" >
           <h3>Web Development</h3>
           <p>Our development can tailor towards needs for businesses of all kinds</p>
         </div>
         <div class="hidden card-service">
-          <img class="icon" src="/assets/images/icons/mobile-app-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/mobile-app-svgrepo-com.svg" alt="PH" >
           <h3>Woo Commerice</h3>
           <p>Sell your products online your way</p>
         </div>
         <div class="hidden card-service">
-          <img class="icon" src="/assets/images/icons/interface-control-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/interface-control-svgrepo-com.svg" alt="PH" >
           <h3>Web Design</h3>
           <p>Design your site with unlimited freedom, allowing to express your creative vision and business asthetics</p>
         </div>
@@ -70,7 +76,7 @@
           <div class="card-deal">
             <p>First Month Hosting Free</p>
           </div>
-          <img class="icon" src="/assets/images/icons/cloud-acceleration-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/cloud-acceleration-svgrepo-com.svg" alt="PH" >
           <h3>Cloud Delivery</h3>
           <p>Deploy to the internet with ease to reach your customers</p>
         </div>
@@ -78,7 +84,7 @@
           <div class="card-deal">
             <p>Free</p>
           </div>
-          <img class="icon" src="/assets/images/icons/safe-and-stable-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/safe-and-stable-svgrepo-com.svg" alt="PH" >
           <h3>Monitored Security</h3>
           <p>Ensure that your site is protected and securely monitered</p>
         </div>
@@ -86,7 +92,7 @@
           <div class="card-deal">
             <p>Free</p>
           </div>
-          <img class="icon" src="/assets/images/icons/system-settings-svgrepo-com.svg" alt="PH" >
+          <img class="icon" src="/assets/icons/system-settings-svgrepo-com.svg" alt="PH" >
           <h3>IT Support</h3>
           <p>We offer specialised IT assistance for your business needs</p>
         </div>
@@ -95,25 +101,84 @@
         <h2>What We Offer</h2>
         <p>Platforms delivered for your business needs</p>
         <div class="service-grid-container">
-          <p class="service-grid-item">Development</p>
-          <p class="service-grid-item">Woo Commerice</p>
-          <p class="service-grid-item">Design</p>
-          <p class="service-grid-item">Cloud Delivery</p>
-          <p class="service-grid-item">Security</p>
-          <p class="service-grid-item">IT Support</p>
+          <p class="service-grid-item selected" id="development">Development</p>
+          <p class="service-grid-item" id="commerice">Woo Commerice</p>
+          <p class="service-grid-item" id="design">Design</p>
+          <p class="service-grid-item" id="cloud">Cloud Delivery</p>
+          <p class="service-grid-item" id="security">Security</p>
+          <p class="service-grid-item" id="support">IT Support</p>
         </div>
-        <!-- <div>
-          <p>Hello</p>
-          <p>World</p>
-        </div> -->
-        <div class="card-product" onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')">
-          <p>Windscreen Service Site</p>
+        <div id="development-service">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/development.webp" alt="PH" loading="lazy" >
+          </div>
+          <p>
+            Create a website that caters to your business in every way. 
+            With our development process, we provide a comprehensive approach that includes initial consultation, strategic planning, custom design, robust development, thorough testing, seamless deployment, and ongoing support. 
+            Our goal is to create a website that not only meets your needs but also enhances your online presence and drives business growth.
+          </p>
         </div>
-        <div class="card-product" onclick="window.open('https://app038.wordpress.com', '_blank', 'noopener')">
-          <p>Wordpress Shopify Site</p>
+        <div class="hide-service" id="commerice-service" onclick="window.open('https://app038.wordpress.com', '_blank', 'noopener')">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/oil.webp" alt="PH" loading="lazy" >
+            <div onclick="window.open('https://app038.wordpress.com/', '_blank', 'noopener')" >
+              <p class="link-p">
+                Visit Example Site
+              </p>
+            </div>
+          </div>
+          <p>
+            Sell online your way. Freely customise your online store to fit you unique business needs.
+            With our flexible and scalable solutions, you can easily manage products, track inventory, and process payments securely.
+            Enhance your customer experience with personalized shopping options and seamless integration with various payment gateways.
+          </p>
+        </div>
+        <div class="hide-service" id="design-service" onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/design.webp" alt="PH" loading="lazy" >
+            <div onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')" >
+              <p class="link-p">
+                Visit Example Site
+              </p>
+            </div>
+          </div>
+          <p>
+            Design your vision. 
+            Whether you need a sleek, modern website or a vibrant, artistic platform, we ensure that your site reflects your unique brand identity and business aesthetics. 
+            With unlimited freedom in design, we help you express your vision and connect with your audience effectively.
+          </p>
+        </div>
+        <div class="hide-service" id="cloud-service" onclick="window.open('https://app038.wordpress.com', '_blank', 'noopener')">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/cloud.webp" alt="PH" loading="lazy" >
+          </div>
+          <p>
+            Enjoy a free domain for the first year to get your store up and running and start with free hosting for the first month to save on initial costs.
+            Scale your site to reach your customers with ease and reliability. 
+            Our cloud delivery service ensures that your website is always accessible, fast, and secure, providing a seamless experience for your users.
+          </p>
+        </div>
+        <div class="hide-service" id="security-service" onclick="window.open('https://glassandwindscreen.vercel.app', '_blank', 'noopener')">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/security.webp" alt="PH" loading="lazy" >
+          </div>
+          <p>
+            Ensure that your site is protected and secure from harmful traffic.
+            Enjoy free monitored secruity with real-time alerts and automatic threat detection. 
+            Our advanced security protocols safeguard your data and maintain the integrity of your website, giving you peace of mind
+          </p>
+        </div>
+        <div class="hide-service" id="support-service" onclick="window.open('https://app038.wordpress.com', '_blank', 'noopener')">
+          <div class="card-service-img-container">
+            <img class="img-service" src="/assets/support.webp" alt="PH" loading="lazy" >
+          </div>
+          <p>
+            We supply free IT support in various areas to ensure your business runs smoothly.
+            Whether you need help with admin or resolving techincal issues, we provide reliable and efficent support free of cost to support your business needs.
+          </p>
         </div>
       </section>
-      <section class="footer">
+      <section class="footer" id="footer">
         <h3>Contact us for a free qoute</h3>
         <p>Phone: 021 128 1377 </p>
         <p>Email: alif.nurrokh@gmail.com</p>
@@ -121,6 +186,78 @@
     </main>
     <!-- <script type="module" src="/main.js"></script> -->
     <script>
+      document.addEventListener("click", (e) => {
+        const { target } = e;
+        if(target.matches("nav a")){
+          e.preventDefault();
+          route();
+        } else { return; }
+      });
+
+      const routes = {
+        404: {
+          template: "/404.html",
+          title: "404",
+          description: "Page not found",
+        },
+        "/" : {
+          template: "/index.html",
+          title: "Home",
+          description: "Home page",
+        },
+        "/employers" : {
+          template: "/assets/templates/employers.html",
+          title: "Employers",
+          description: "For employers",
+        },
+      };
+    
+      // wacthes the URL and call the urlLocationHandler
+      const route = (e) => {
+        // get window.event if arg not provided
+        e = e || window.event;
+        // prevent default behaviour
+        e.preventDefault();
+        // add entry to session history stack
+        window.history.pushState({}, "", e.target.href);
+        locationHandler();
+      };
+      
+      // handes URL location
+      const locationHandler = async() => {
+        // get url path
+        const location = window.location.pathname;
+
+        // if path length is not 0
+        if(location.length != 0){
+          // get route
+          const route = routes[location] || routes["404"];
+
+          // get html temp
+          const html = await fetch(route.template).then((response) => response.text());
+
+          //set content div to html
+          document.getElementById("content").innerHTML = html;
+
+          //set description
+          const metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute("content", route.description);
+          } else {
+            console.error('Meta description element not found');
+          }
+        } else {
+          // if path is 0
+          location = "/";
+        };
+      };
+
+      window.onpopstate = locationHandler;
+
+      window.route = route;
+
+      locationHandler();
+
       document.addEventListener('scroll', function() {
         const toggleVisibility = (selector) => {
           const elements = document.querySelectorAll(selector);
@@ -137,30 +274,29 @@
       })
 
       document.addEventListener('DOMContentLoaded', function() {
-        const cardProducts = document.querySelectorAll('.card-product');
-        cardProducts.forEach(card => {
-          card.addEventListener('mouseover', function() {
-            card.opacity = 0.75;
-          });
-          card.addEventListener('mouseout', function() {
-            card.opacity = 1;
-          });
-        });
-        let currentSelected = null;
+        // let development service be the first selected
+        let currentId = 'development'
+        let currentSelected = document.getElementById(currentId); 
+        let currentService = document.getElementById(currentId + '-service');
+        // console.log(currentSelected)
         const serviceItems = document.querySelectorAll('.service-grid-item');
         serviceItems.forEach(item => {
           item.addEventListener('click', function() {
-            /* check if any other element contains the selected class*/
-            if (currentSelected){
-              if(currentSelected != item){
-                currentSelected.classList.remove('selected');
-              };
+            /* check if item is the not the same as current selected element*/
+            if(currentSelected != item){
+              /* remove from current */
+              currentSelected.classList.remove('selected');
+              currentService.classList.toggle('hide-service');
+
+              /* toggle 'selected' */
+              item.classList.toggle('selected');
+              const itemService = document.getElementById(item.id + '-service');
+              itemService.classList.remove('hide-service');
+
+              /* update current selected */
+              currentSelected = item;
+              currentService = itemService;
             };
-            /* toggle 'selected' */
-            item.classList.toggle('selected');
-            
-            /* updated current selected */
-            currentSelected = item.classList.contains('selected') ? item : null;
           });
         });
       });
