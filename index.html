@@ -189,7 +189,7 @@
       document.addEventListener("click", (e) => {
         const { target } = e;
         if(target.matches("nav a")){
-          // e.preventDefault();
+          e.preventDefault();
           route();
         } else { return; }
       });
@@ -217,7 +217,7 @@
         // get window.event if arg not provided
         e = e || window.event;
         // prevent default behaviour
-        // e.preventDefault();
+        e.preventDefault();
         // add entry to session history stack
         window.history.pushState({}, "", e.target.href);
         locationHandler();
@@ -259,7 +259,6 @@
       locationHandler();
 
       document.addEventListener('scroll', function() {
-        console.log('scrolled!');
         const toggleVisibility = (selector) => {
           const elements = document.querySelectorAll(selector);
           elements.forEach(element => {
@@ -275,34 +274,35 @@
       })
 
       document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOMContentLoaded')
         // let development service be the first selected
         let currentId = 'development'
         let currentSelected = document.getElementById(currentId); 
         let currentService = document.getElementById(currentId + '-service');
         // console.log(currentSelected)
-        const serviceItems = document.querySelectorAll('.service-grid-item');
-        serviceItems.forEach(item => {
-          console.log(item);
-          item.addEventListener('click', function() {
-            console.log('click');
-            /* check if item is the not the same as current selected element*/
-            if(currentSelected != item){
-              /* remove from current */
-              currentSelected.classList.remove('selected');
-              currentService.classList.toggle('hide-service');
+        window.onload = (event) => {
+          console.log('window loaded');
+          const serviceItems = document.querySelectorAll('.service-grid-item');
+          serviceItems.forEach(item => {
+            item.addEventListener('click', function() {
+              console.log('click');
+              /* check if item is the not the same as current selected element*/
+              if(currentSelected != item){
+                /* remove from current */
+                currentSelected.classList.remove('selected');
+                currentService.classList.toggle('hide-service');
 
-              /* toggle 'selected' */
-              item.classList.toggle('selected');
-              const itemService = document.getElementById(item.id + '-service');
-              itemService.classList.remove('hide-service');
+                /* toggle 'selected' */
+                item.classList.toggle('selected');
+                const itemService = document.getElementById(item.id + '-service');
+                itemService.classList.remove('hide-service');
 
-              /* update current selected */
-              currentSelected = item;
-              currentService = itemService;
-            };
+                /* update current selected */
+                currentSelected = item;
+                currentService = itemService;
+              };
+            });
           });
-        });
+        }
       });
     </script>
   </body>
