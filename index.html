@@ -189,7 +189,7 @@
       document.addEventListener("click", (e) => {
         const { target } = e;
         if(target.matches("nav a")){
-          e.preventDefault();
+          // e.preventDefault();
           route();
         } else { return; }
       });
@@ -217,7 +217,7 @@
         // get window.event if arg not provided
         e = e || window.event;
         // prevent default behaviour
-        e.preventDefault();
+        // e.preventDefault();
         // add entry to session history stack
         window.history.pushState({}, "", e.target.href);
         locationHandler();
