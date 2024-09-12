@@ -259,6 +259,7 @@
       locationHandler();
 
       document.addEventListener('scroll', function() {
+        console.log('scrolled!');
         const toggleVisibility = (selector) => {
           const elements = document.querySelectorAll(selector);
           elements.forEach(element => {
@@ -274,6 +275,7 @@
       })
 
       document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOMContentLoaded')
         // let development service be the first selected
         let currentId = 'development'
         let currentSelected = document.getElementById(currentId); 
