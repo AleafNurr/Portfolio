@@ -282,6 +282,7 @@
         const serviceItems = document.querySelectorAll('.service-grid-item');
         serviceItems.forEach(item => {
           item.addEventListener('click', function() {
+            console.log('click');
             /* check if item is the not the same as current selected element*/
             if(currentSelected != item){
               /* remove from current */
