@@ -186,78 +186,6 @@
     </main>
     <!-- <script type="module" src="/main.js"></script> -->
     <script>
-      /* document.addEventListener("click", (e) => {
-        const { target } = e;
-        if(target.matches("nav a")){
-          e.preventDefault();
-          route();
-        } else { return; }
-      });
-
-      const routes = {
-        404: {
-          template: "/404.html",
-          title: "404",
-          description: "Page not found",
-        },
-        "/" : {
-          template: "/index.html",
-          title: "Home",
-          description: "Home page",
-        },
-        "/employers" : {
-          template: "/assets/templates/employers.html",
-          title: "Employers",
-          description: "For employers",
-        },
-      };
-    
-      // wacthes the URL and call the urlLocationHandler
-      const route = (e) => {
-        // get window.event if arg not provided
-        e = e || window.event;
-        // prevent default behaviour
-        e.preventDefault();
-        // add entry to session history stack
-        window.history.pushState({}, "", e.target.href);
-        locationHandler();
-      };
-      
-      // handes URL location
-      const locationHandler = async() => {
-        // get url path
-        const location = window.location.pathname;
-
-        // if path length is not 0
-        if(location.length != 0){
-          // get route
-          const route = routes[location] || routes["404"];
-
-          // get html temp
-          const html = await fetch(route.template).then((response) => response.text());
-
-          //set content div to html
-          document.getElementById("content").innerHTML = html;
-
-          //set description
-          const metaDescription = document.querySelector('meta[name="description"]');
-          if (metaDescription) {
-            metaDescription.setAttribute("content", route.description);
-          } else {
-            console.error('Meta description element not found');
-          }
-        } else {
-          // if path is 0
-          location = "/";
-        };
-      };
-
-      window.onpopstate = locationHandler;
-
-      window.route = route;
-
-      locationHandler(); */
-
       document.addEventListener('scroll', function() {
         const toggleVisibility = (selector) => {
           const elements = document.querySelectorAll(selector);
@@ -282,7 +210,6 @@
         const serviceItems = document.querySelectorAll('.service-grid-item');
         serviceItems.forEach(item => {
           item.addEventListener('click', function() {
-            console.log('click');
             /* check if item is the not the same as current selected element*/
             if(currentSelected != item){
               /* remove from current */
