@@ -42,7 +42,6 @@
 }
 
 /* BANNER */
-
 .h2-banner {
   font-size: 2.5rem;
 }
@@ -117,7 +116,7 @@
   .banner-image {
     display: block;
     width: 175%;
-    hieght: auto;
+    height: auto;
     background-size: cover;
     background-position: center;
   }
@@ -226,7 +225,7 @@
     display: none;
   }
 
-  .img-service {
+  .img-service, .img-service-md, .img-service-sm {
     display: block;
     width: 100%;
     height: auto;
@@ -237,7 +236,7 @@
     border-radius: 15px;
   }
 
-  .link-p {
+  .service-button {
     position: absolute;
     left: 35%;
     transform: translate(-50%, -50%);
@@ -248,7 +247,8 @@
     color: white;
     border-radius: 15px;
     text-align: center;
-    opacity: 0.8;
+    opacity: 1;
+    border: none;
   }
 }
 
@@ -419,7 +419,6 @@
     border-radius: 30px;
     margin: 1rem 0;
     animation: service-img 1.5s ease 0s 1 normal forwards;
-    overflow-y: hidden;
   }
 
   @keyframes service-img {
@@ -436,33 +435,71 @@
     display: none;
   }
 
-  .img-service {
-    display: block;
+  .img-service, .img-service-md, .img-service-sm {
+    display: inherit;
     width: 25%;
     height: auto;
     background-size: cover;
     background-position: center;
+    float: right;
     padding: 0;
     margin: 0;
+    margin-right: 12.5rem;
     border-radius: 15px;
   }
 
-  .link-p {
+  .img-service-md {
+    display: block;
+    width: 40%;
+    height: auto;
+    margin: 0;
+    margin-left: 20rem;
+  }
+
+  .img-service-sm {
+    width: 40%;
+    height: auto;
+    margin: 0;
+    margin-right: 5rem;
+  }
+
+  .service-button {
     position: absolute;
-    left: 35%;
+    top: 90%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 15%;
     padding: 0.5rem 0;
     font-size: 1.25rem;
     background-color: #0067fb;
     color: white;
     border-radius: 15px;
     text-align: center;
-    opacity: 0.8;
+    opacity: 1;
+    border: none;
+  }
+
+  .service-button:hover {
+    animation: button-hover 1.5s ease 0s 1 normal forwards;
+  }
+
+  @keyframes button-hover {
+    0% {
+      opacity: 1;
+    }
+    
+    100% {
+    opacity: 0.3;
+    }
   }
 
   .service-text {
+    position: absolute;
+    top: 50%;
+    margin-left: 2.5rem;
+    width: 50%;
+    border-radius: 10px;
+    font-size: 1.25rem;
     background-color: var(--white-color);
   }
-
 }
